@@ -70,9 +70,9 @@ exports.getProducts = (req, res, next) => {
 exports.postDeleteProduct = (req, res, next) => {
   const prodId = req.body.productId;
   Product
-    .findByPk(prodId)
+    .deleteById(prodId)
     .then(product => {
-      return product.destroy();
+      console.log(product);
+      res.redirect('/admin/products')
     })
-    .then(result => res.redirect('/admin/products'));
 };

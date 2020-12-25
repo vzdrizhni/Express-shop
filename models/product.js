@@ -49,6 +49,11 @@ class Product {
       .then(prod => prod)
       .catch()
   }
+
+  static deleteById(prodId) {
+    const db = getDb();
+    return db.collection('products').deleteOne({_id: new mongoDb.ObjectId(prodId)})
+  }
 }
 
 module.exports = Product;
