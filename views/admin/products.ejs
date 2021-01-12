@@ -30,7 +30,7 @@
                                     <a href="/admin/edit-product/<%= product._id %>?edit=true" class="btn">Edit</a>
                                         <input type="hidden" value="<%= product._id %>" name="productId">
                                         <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                                        <button class="btn" type="button">Delete</button>
+                                        <button class="btn" type="button" onclick="deleteProduct(this)">Delete</button>
                                 </div>
                             </article>
                             <% } %>
@@ -40,4 +40,4 @@
                         <% } %>
             </main>
             <%- include('../includes/end.ejs') %>
-            <script src="../../public/js/admin.js"></script>
+            <script src="/js/admin.js"></script>
